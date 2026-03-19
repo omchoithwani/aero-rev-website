@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { DM_Sans, Syne } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import './globals.css'
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://aerorev.com',
+    url: 'https://aero-rev.com',
     siteName: 'AeroRev',
     title: 'HubSpot CRM, Outbound and RevOps Agency | AeroRev',
     description: 'AeroRev helps B2B and ecommerce brands in the USA and UK fix their revenue systems, build outbound pipeline and scale email revenue. HubSpot Partner. Real results.',
@@ -64,7 +63,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <Analytics />
       </body>
     </html>
   )
