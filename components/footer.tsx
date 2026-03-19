@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import { Linkedin } from "lucide-react"
+import { useEffect } from "react"
 
 const footerLinks = {
   company: [
@@ -22,6 +25,25 @@ const footerLinks = {
 }
 
 export function Footer() {
+  useEffect(() => {
+    // Load HubSpot tracking code
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.id = 'hs-script-loader'
+    script.async = true
+    script.defer = true
+    script.src = '//js.hs-scripts.com/45587544.js'
+    document.body.appendChild(script)
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.getElementById('hs-script-loader')
+      if (existingScript && document.body.contains(existingScript)) {
+        document.body.removeChild(existingScript)
+      }
+    }
+  }, [])
+
   return (
     <footer className="bg-card border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">

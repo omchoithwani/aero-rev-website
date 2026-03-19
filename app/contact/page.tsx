@@ -4,6 +4,13 @@ import type { Metadata } from "next"
 import { useState, useEffect } from "react"
 import { ArrowRight, Calendar, Mail, Clock } from "lucide-react"
 
+// Declare HubSpot global
+declare global {
+  interface Window {
+    hbspt: any
+  }
+}
+
 const services = [
   { value: "crm", label: "CRM Setup and Management" },
   { value: "revops", label: "HubSpot RevOps" },
@@ -13,63 +20,43 @@ const services = [
 ]
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    website: "",
-    service: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
-
   useEffect(() => {
     // Load HubSpot meetings script
-    const script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
-    script.async = true
-    document.body.appendChild(script)
+    const meetingsScript = document.createElement('script')
+    meetingsScript.type = 'text/javascript'
+    meetingsScript.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
+    meetingsScript.async = true
+    document.body.appendChild(meetingsScript)
+
+    // Load HubSpot forms script
+    const formsScript = document.createElement('script')
+    formsScript.charset = 'utf-8'
+    formsScript.type = 'text/javascript'
+    formsScript.src = '//js.hsforms.net/forms/embed/v2.js'
+    formsScript.async = true
+    formsScript.onload = () => {
+      // Create form after script loads
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          portalId: "45587544",
+          formId: "ba04a194-393f-43cf-af6a-4c4e15cbf8dd",
+          region: "na1",
+          target: '#hubspot-form-container'
+        })
+      }
+    }
+    document.body.appendChild(formsScript)
 
     return () => {
-      // Cleanup script on unmount
-      document.body.removeChild(script)
+      // Cleanup scripts on unmount
+      if (document.body.contains(meetingsScript)) {
+        document.body.removeChild(meetingsScript)
+      }
+      if (document.body.contains(formsScript)) {
+        document.body.removeChild(formsScript)
+      }
     }
   }, [])
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setSubmitted(true)
-    setIsSubmitting(false)
-  }
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
-
-  if (submitted) {
-    return (
-      <div className="flex flex-col min-h-[80vh] items-center justify-center px-4">
-        <div className="max-w-md text-center">
-          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-            <ArrowRight className="h-8 w-8 text-primary" />
-          </div>
-          <h1 className="mt-6 font-heading text-3xl font-bold text-foreground">
-            Message received
-          </h1>
-          <p className="mt-4 text-muted-foreground">
-            We will get back to you within one business day. If your request is urgent, you can book a call directly using the calendar link.
-          </p>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div className="flex flex-col">
@@ -128,118 +115,8 @@ export default function ContactPage() {
                 Tell us about your situation and we will get back to you within one business day.
               </p>
 
-              <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                      placeholder="you@company.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      required
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                      placeholder="Company name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="website" className="block text-sm font-medium text-foreground mb-2">
-                      Website
-                    </label>
-                    <input
-                      type="url"
-                      id="website"
-                      name="website"
-                      value={formData.website}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                      placeholder="https://yourcompany.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
-                    What do you need help with?
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    required
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                  >
-                    <option value="">Select a service</option>
-                    {services.map((service) => (
-                      <option key={service.value} value={service.value}>
-                        {service.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Tell us about your situation
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
-                    placeholder="What is the main challenge you are facing? What have you tried so far?"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
-              </form>
+              {/* HubSpot Form Embed */}
+              <div id="hubspot-form-container" className="mt-8"></div>
             </div>
           </div>
 
