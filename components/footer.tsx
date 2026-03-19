@@ -60,7 +60,7 @@ export function Footer() {
             </p>
             <div className="mt-6 flex items-center gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/aero-rev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -69,7 +69,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://hubspot.com/partners"
+                href="https://ecosystem.hubspot.com/marketplace/solutions/aero-rev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-muted-foreground hover:text-primary transition-colors"
