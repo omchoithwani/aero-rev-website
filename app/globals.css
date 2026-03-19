@@ -1,0 +1,151 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* AeroRev Elite Consultancy Theme - Warm, Professional, Premium */
+:root {
+  --background: #FAFAF9;
+  --foreground: #1C1917;
+  --card: #FFFFFF;
+  --card-foreground: #1C1917;
+  --popover: #FFFFFF;
+  --popover-foreground: #1C1917;
+  --primary: #1C1917;
+  --primary-foreground: #FAFAF9;
+  --secondary: #F5F5F4;
+  --secondary-foreground: #1C1917;
+  --muted: #F5F5F4;
+  --muted-foreground: #78716C;
+  --accent: #1C1917;
+  --accent-foreground: #FAFAF9;
+  --destructive: #DC2626;
+  --destructive-foreground: #FAFAF9;
+  --border: #E7E5E4;
+  --input: #E7E5E4;
+  --ring: #1C1917;
+  --radius: 0rem;
+}
+
+@theme inline {
+  --font-sans: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --font-heading: 'Syne', 'Syne Fallback', system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: 0rem;
+  --radius-md: 0rem;
+  --radius-lg: 0rem;
+  --radius-xl: 0rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Syne for headings with better letter spacing */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  
+  h1 {
+    letter-spacing: -0.03em;
+  }
+  
+  p {
+    line-height: 1.7;
+  }
+}
+
+/* Button hover effects - minimal, elegant */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-primary px-8 py-4 text-base font-medium text-primary-foreground tracking-wide uppercase;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:bg-foreground/80;
+    @apply active:scale-[0.98];
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+    letter-spacing: 0.1em;
+    font-size: 0.8125rem;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center border border-foreground px-8 py-4 text-base font-medium text-foreground bg-transparent tracking-wide uppercase;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:bg-foreground hover:text-background;
+    @apply active:scale-[0.98];
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+    letter-spacing: 0.1em;
+    font-size: 0.8125rem;
+  }
+  
+  .btn-ghost {
+    @apply inline-flex items-center text-foreground font-medium tracking-wide uppercase;
+    @apply transition-all duration-300;
+    @apply hover:opacity-60;
+    letter-spacing: 0.1em;
+    font-size: 0.8125rem;
+  }
+  
+  /* Section label styling */
+  .section-label {
+    @apply text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground mb-6;
+  }
+  
+  /* Large display text */
+  .display-heading {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Custom scrollbar - minimal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D6D3D1;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A8A29E;
+}
+
+/* Selection color */
+::selection {
+  background: #1C1917;
+  color: #FAFAF9;
+}
