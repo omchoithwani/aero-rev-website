@@ -1,7 +1,7 @@
 "use client"
 
 import type { Metadata } from "next"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ArrowRight, Calendar, Mail, Clock } from "lucide-react"
 
 const services = [
@@ -23,6 +23,20 @@ export default function ContactPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+
+  useEffect(() => {
+    // Load HubSpot meetings script
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
+    script.async = true
+    document.body.appendChild(script)
+
+    return () => {
+      // Cleanup script on unmount
+      document.body.removeChild(script)
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -91,23 +105,12 @@ export default function ContactPage() {
                 The fastest way to get started. Pick a time that works for you and we will dig into your specific situation.
               </p>
               
-              {/* Calendly Embed Placeholder */}
-              <div className="mt-8 aspect-[4/3] rounded-xl bg-secondary border border-border flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Calendar className="h-12 w-12 text-muted-foreground mx-auto" />
-                  <p className="mt-4 text-muted-foreground text-sm">
-                    Calendly embed will appear here
-                  </p>
-                  <a
-                    href="https://calendly.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
-                  >
-                    Open Calendly
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </div>
+              {/* HubSpot Meetings Embed */}
+              <div className="mt-8 rounded-xl overflow-hidden border border-border">
+                <div 
+                  className="meetings-iframe-container" 
+                  data-src="https://meetings.hubspot.com/choithwani?embed=true"
+                ></div>
               </div>
             </div>
 
