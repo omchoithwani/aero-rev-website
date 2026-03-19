@@ -93,10 +93,11 @@ export default function ContactPage() {
               </p>
               
               {/* HubSpot Meetings Embed */}
-              <div className="mt-8 rounded-xl overflow-hidden border border-border">
+              <div className="mt-8 rounded-xl overflow-hidden border border-border min-h-[600px]">
                 <div 
                   className="meetings-iframe-container" 
                   data-src="https://meetings.hubspot.com/choithwani?embed=true"
+                  style={{ minHeight: '600px' }}
                 ></div>
               </div>
             </div>
