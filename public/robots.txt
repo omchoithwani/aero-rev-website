@@ -1,0 +1,12 @@
+# robots.txt for aero-rev.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aero-rev.com/sitemap.xml
+
+# Disallow admin/internal pages if you have any
+# User-agent: *
+# Disallow: /admin/
+# Disallow: /api/
