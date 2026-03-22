@@ -25,6 +25,15 @@ const posts = [
     date: "March 2026",
     tags: ["HubSpot", "Sales Hub", "Pricing"],
   },
+  {
+    slug: "mycase-vs-clio-law-firms",
+    title: "MyCase vs Clio for Solo and Small Law Firms",
+    description: "Honest comparison from someone who works inside both platforms. Real pricing, trust accounting differences, and which platform saves you $1,500-$2,000/year.",
+    category: "Legal Software",
+    readTime: "11 min read",
+    date: "March 2026",
+    tags: ["MyCase", "Clio", "Legal", "Trust Accounting"],
+  },
 ]
 
 export default function BlogPage() {
