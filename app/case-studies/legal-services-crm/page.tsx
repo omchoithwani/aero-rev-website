@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 export const metadata = {
   title: "Legal Services CRM Case Study | AeroRev",
-  description: "How we unified three separate practice areas into a single HubSpot CRM, improving client retention by 25% and reducing follow-up time by 40%.",
+  description: "How we integrated HubSpot, MyCase, and Portant for a multi-practice law firm, automating the entire client journey from lead capture through case creation and document generation.",
 }
 
 export default function LegalServicesCaseStudy() {
@@ -25,15 +25,17 @@ export default function LegalServicesCaseStudy() {
           <div className="flex flex-wrap gap-2 mb-6">
             <span className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground">HubSpot CRM</span>
             <span className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground">Legal</span>
-            <span className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground">Multi-Pipeline</span>
+            <span className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground">Zapier</span>
+            <span className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground">MyCase</span>
+            <span className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground">Portant</span>
           </div>
           
           <h1 className="font-heading text-4xl sm:text-5xl font-bold text-foreground leading-tight mb-6">
-            Legal Services Firm: HubSpot CRM Implementation
+            Legal Services: End-to-End HubSpot + MyCase Integration
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Multi-practice law firm with three separate practice areas using disconnected systems. We unified everything into HubSpot and stayed on retainer to manage it.
+            Multi-practice law firm with three separate practice areas using disconnected systems. We unified everything into HubSpot, built a bidirectional sync with MyCase, and automated legal document generation.
           </p>
         </div>
       </section>
@@ -43,16 +45,16 @@ export default function LegalServicesCaseStudy() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-heading font-bold text-foreground mb-2">0% → 100%</div>
-              <div className="text-sm text-muted-foreground">Pipeline Visibility</div>
+              <div className="text-4xl font-heading font-bold text-foreground mb-2">0</div>
+              <div className="text-sm text-muted-foreground">Manual Data Entry</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-heading font-bold text-foreground mb-2">-40%</div>
-              <div className="text-sm text-muted-foreground">Follow-up Time</div>
+              <div className="text-4xl font-heading font-bold text-foreground mb-2">3</div>
+              <div className="text-sm text-muted-foreground">Systems Integrated</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-heading font-bold text-foreground mb-2">+25%</div>
-              <div className="text-sm text-muted-foreground">Client Retention</div>
+              <div className="text-4xl font-heading font-bold text-foreground mb-2">100%</div>
+              <div className="text-sm text-muted-foreground">Document Automation</div>
             </div>
           </div>
         </div>
@@ -64,52 +66,84 @@ export default function LegalServicesCaseStudy() {
           <div className="prose prose-lg max-w-none">
             <h2 className="font-heading text-3xl font-bold text-foreground mb-6">The Problem</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              This law firm had three practice areas: family law, estate planning, and business law. Each practice used different tools. Family law used spreadsheets. Estate planning used an old legal CRM that nobody understood. Business law used email and memory.
+              This law firm specialized in criminal defense, estate planning, elder law, and personal injury. Three practice areas. Over 1,000 cases handled. But their internal systems were a mess.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Partners had no visibility into what was happening across the firm. Clients would call in and get different answers depending on who picked up. Follow-ups were missed. Opportunities disappeared.
+              They used MyCase for case management (because that's what law firms use), but all their marketing, lead capture, and client communication happened in HubSpot. The two systems didn't talk to each other. Staff manually copied data between them. Legal documents were generated manually and sent via email.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-12">
-              The managing partner knew this was costing them clients and revenue, but nobody had time to fix it. They needed someone to diagnose the mess, build a system that actually worked, and stick around to run it.
+              The managing partner knew this was eating time and creating errors, but nobody had the bandwidth to fix it. They needed someone to build the integration, automate the workflows, and make the whole thing actually work.
+            </p>
+
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-6">The Technical Challenge</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              <strong>No native integration exists between HubSpot and MyCase.</strong> You can't just connect them with a button click. The integration had to be built from scratch using Zapier as the middleware.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-12">
+              The data flow had to be bidirectional. New leads in HubSpot needed to create cases in MyCase. Updates in MyCase (notes, activities, case status) needed to sync back to HubSpot. And legal documents needed to generate automatically based on deal stage triggers.
             </p>
 
             <h2 className="font-heading text-3xl font-bold text-foreground mb-6">What We Built</h2>
+            
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-4 mt-8">HubSpot CRM Setup</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              <strong>Single HubSpot CRM with three custom pipelines:</strong>
+              Configured Sales Hub Professional and Marketing Hub Professional with custom pipelines for each practice area:
             </p>
             <ul className="space-y-3 mb-6">
-              <li className="text-muted-foreground">Family Law: Consultation → Retained → Case Open → Case Closed</li>
-              <li className="text-muted-foreground">Estate Planning: Initial Meeting → Planning Phase → Documentation → Execution</li>
-              <li className="text-muted-foreground">Business Law: Inquiry → Conflict Check → Engagement → Active Matter → Closed</li>
+              <li className="text-muted-foreground"><strong>Criminal Defense:</strong> Consultation → Retained → Case Open → Case Closed</li>
+              <li className="text-muted-foreground"><strong>Estate Planning:</strong> Initial Meeting → Planning Phase → Documentation → Execution</li>
+              <li className="text-muted-foreground"><strong>Personal Injury:</strong> Inquiry → Conflict Check → Engagement → Active Matter → Closed</li>
             </ul>
+            
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-4 mt-8">HubSpot ↔ MyCase Integration (Zapier)</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              <strong>Unified client records:</strong> Every interaction across all practices in one place. Partners can see the full relationship history.
+              <strong>Direction 1: HubSpot → MyCase</strong>
             </p>
+            <ul className="space-y-3 mb-6">
+              <li className="text-muted-foreground">Trigger: Deal stage moves to "Retained" or "Engagement" in HubSpot</li>
+              <li className="text-muted-foreground">Action: Zapier creates a new case in MyCase with all contact details, case type, and retainer information</li>
+              <li className="text-muted-foreground">Result: Staff don't manually re-enter client data into MyCase</li>
+            </ul>
+
             <p className="text-muted-foreground leading-relaxed mb-6">
-              <strong>Automated workflows:</strong> Follow-up reminders, document requests, billing triggers, case milestone notifications.
+              <strong>Direction 2: MyCase → HubSpot</strong>
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-12">
-              <strong>Custom integrations:</strong> Connected MyCase (case management software) via Zapier and Portant for automated document generation.
+            <ul className="space-y-3 mb-12">
+              <li className="text-muted-foreground">Trigger: New note or activity logged in MyCase</li>
+              <li className="text-muted-foreground">Action: Zapier creates a corresponding note or task in HubSpot attached to the contact record</li>
+              <li className="text-muted-foreground">Result: Marketing and sales teams see what's happening in active cases without logging into MyCase</li>
+            </ul>
+
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-4 mt-8">Document Automation (Portant + HubSpot)</h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Integrated Portant (document automation tool) with HubSpot to auto-generate legal documents:
             </p>
+            <ul className="space-y-3 mb-12">
+              <li className="text-muted-foreground">Trigger: Deal reaches specific stages (e.g., "Retained" or "Documentation")</li>
+              <li className="text-muted-foreground">Action: Portant pulls contact/deal data from HubSpot and generates pre-filled legal agreements, retainer forms, or estate planning documents</li>
+              <li className="text-muted-foreground">Delivery: Documents automatically sent to client via email with e-signature request</li>
+              <li className="text-muted-foreground">Result: No manual document creation. No copying data into templates. 100% automated.</li>
+            </ul>
 
             <h2 className="font-heading text-3xl font-bold text-foreground mb-6">The Results</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              <strong>100% pipeline visibility:</strong> Partners can see exactly what's happening in every practice area. Weekly pipeline reviews went from "guessing" to "knowing."
+              <strong>Zero manual data entry:</strong> Staff no longer copy client information between HubSpot and MyCase. The integration handles it automatically.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              <strong>40% reduction in follow-up time:</strong> Automated reminders and task sequences mean staff spend less time manually tracking what needs to happen next.
+              <strong>Full visibility across teams:</strong> Marketing and sales teams see case updates in HubSpot without needing MyCase access. Legal staff see lead source and communication history without leaving MyCase.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-12">
-              <strong>25% increase in client retention:</strong> Nothing falls through the cracks anymore. Clients get consistent communication. Renewals and referrals went up.
+              <strong>Document automation eliminates manual work:</strong> Legal agreements, retainers, and estate planning documents generate automatically and go out for e-signature the moment a deal hits the right stage.
             </p>
 
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-6">Why It Worked</h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              We did not just build it and leave. We stayed on retainer to manage the CRM, train new staff, optimize workflows, and fix issues as they came up.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              The managing partner did not want to become a HubSpot admin. They wanted someone to own it so they could focus on practicing law. That's what we did.
-            </p>
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-6">Technical Stack</h2>
+            <ul className="space-y-3 mb-6">
+              <li className="text-muted-foreground"><strong>HubSpot Sales Hub Professional</strong> - CRM, deal tracking, contact management</li>
+              <li className="text-muted-foreground"><strong>HubSpot Marketing Hub Professional</strong> - Lead capture, email automation, client communication</li>
+              <li className="text-muted-foreground"><strong>MyCase</strong> - Case management software (industry-standard for law firms)</li>
+              <li className="text-muted-foreground"><strong>Zapier</strong> - Middleware connecting HubSpot ↔ MyCase (bidirectional sync)</li>
+              <li className="text-muted-foreground"><strong>Portant</strong> - Document generation and automation</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -117,9 +151,9 @@ export default function LegalServicesCaseStudy() {
       {/* CTA */}
       <section className="py-16 bg-card border-y border-border">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-3xl font-bold text-foreground mb-4">Need help with your CRM?</h2>
+          <h2 className="font-heading text-3xl font-bold text-foreground mb-4">Need to integrate systems that don't talk to each other?</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Tell us what's broken. We'll tell you how we'd fix it.
+            We build integrations between HubSpot and industry-specific tools like MyCase, and automate the workflows that waste your team's time.
           </p>
           <Link href="/contact" className="btn-primary">
             Book a Call

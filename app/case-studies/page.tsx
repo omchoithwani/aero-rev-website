@@ -3,51 +3,51 @@ import { ArrowRight } from "lucide-react"
 
 export const metadata = {
   title: "Case Studies | AeroRev",
-  description: "Real results from HubSpot RevOps implementations. See how we've helped B2B and ecommerce companies fix their revenue systems and drive growth.",
+  description: "Real HubSpot RevOps implementations. See how we've built CRM systems, automated sales operations, and integrated complex tech stacks for B2B companies.",
 }
 
 const caseStudies = [
   {
     slug: "legal-services-crm",
-    title: "Legal Services Firm: HubSpot CRM Implementation",
+    title: "Legal Services Firm: End-to-End HubSpot + MyCase Integration",
     client: "Multi-Practice Law Firm",
     industry: "Legal Services",
-    challenge: "Three separate practice areas using disconnected systems. No pipeline visibility. Clients falling through cracks.",
-    result: "Single unified CRM across all practices. 40% reduction in client follow-up time. Full pipeline visibility for partners.",
+    challenge: "Three practice areas (criminal defense, estate planning, personal injury) using disconnected systems. No native integration between HubSpot and MyCase. Manual data entry everywhere. Legal documents sent manually.",
+    result: "Single unified CRM with bidirectional sync between HubSpot and MyCase via Zapier. Automated legal document generation via Portant. Full client journey automated from lead capture through case creation.",
     metrics: [
-      { label: "Pipeline Visibility", value: "0% → 100%" },
-      { label: "Follow-up Time", value: "-40%" },
-      { label: "Client Retention", value: "+25%" },
+      { label: "Manual Data Entry", value: "Eliminated" },
+      { label: "Systems Integrated", value: "3" },
+      { label: "Document Automation", value: "100%" },
     ],
-    tags: ["HubSpot CRM", "Legal", "Multi-Pipeline"],
+    tags: ["HubSpot CRM", "Legal", "Zapier", "MyCase", "Portant"],
   },
   {
-    slug: "saas-outbound-pipeline",
-    title: "B2B SaaS: Outbound Lead Generation System",
-    client: "HR Tech SaaS Platform",
-    industry: "B2B SaaS",
-    challenge: "Cold outbound was spray-and-pray. 0.3% reply rate. Sales team wasting time on unqualified leads.",
-    result: "Signal-based targeting. Hyper-personalized sequences. 4.2% reply rate. 12 qualified demos per month.",
+    slug: "global-leadership-community",
+    title: "Global Leadership Community: Membership + Events Automation",
+    client: "International Leadership Organization",
+    industry: "Community & Events",
+    challenge: "Running memberships and high-end adventure events through manual processes. No integration between HubSpot and Outseta (membership portal). Tier-based pricing varied by event. Billing contacts needed separate payment routing.",
+    result: "Two automated pipelines (memberships + events) in HubSpot. Custom API integration with Outseta. Tier-based Stripe payment link automation. Full lifecycle from application to onboarding without manual touchpoints.",
     metrics: [
-      { label: "Reply Rate", value: "0.3% → 4.2%" },
-      { label: "Qualified Demos", value: "2 → 12/month" },
-      { label: "Cost per Demo", value: "-65%" },
+      { label: "Pipelines Built", value: "2" },
+      { label: "Platforms Synced", value: "3+" },
+      { label: "Manual Billing", value: "0" },
     ],
-    tags: ["Outbound", "B2B SaaS", "Cold Email"],
+    tags: ["HubSpot", "Outseta", "Stripe", "Custom API", "Membership"],
   },
   {
-    slug: "ecommerce-email-revenue",
-    title: "Ecommerce Brand: Email Marketing Revenue Growth",
-    client: "D2C Fashion Brand",
-    industry: "Ecommerce",
-    challenge: "Email marketing existed but wasn't optimized. Basic flows. No segmentation. Revenue attribution unclear.",
-    result: "Advanced flows + behavioral segmentation. Email revenue grew from 18% to 34% of total revenue in 6 months.",
+    slug: "remote-staffing-sdr",
+    title: "Remote Staffing Company: SDR Sales Automation Stack",
+    client: "Construction Industry Staffing",
+    industry: "B2B Staffing",
+    challenge: "SDR team manually routing leads, manually enrolling sequences, no dialer integration. Sales Hub Pro doesn't support auto-enrollment on contact creation. 9 different call dispositions triggering different next steps.",
+    result: "Four-tool sales engine: SalesIntel → HubSpot → Zapier → Nooks. Intelligent round-robin + company-match routing. Auto-enrollment workaround using Zapier. Call disposition automation. 45-day recycle loop for soft-no contacts.",
     metrics: [
-      { label: "Email Revenue %", value: "18% → 34%" },
-      { label: "Flow Conversion", value: "+127%" },
-      { label: "Revenue per Email", value: "+89%" },
+      { label: "Lead Routing", value: "100% Auto" },
+      { label: "Call Dispositions", value: "9 Mapped" },
+      { label: "Recycle Loop", value: "45 Days" },
     ],
-    tags: ["Email Marketing", "Ecommerce", "Klaviyo"],
+    tags: ["HubSpot", "SalesIntel", "Zapier", "Nooks", "SDR Automation"],
   },
 ]
 
@@ -59,10 +59,10 @@ export default function CaseStudiesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Real results from real clients
+              Real systems we've built
             </h1>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-              We do not just set up systems and disappear. We stay on retainer, run the operations, and own the results. Here's what that looks like.
+              We build HubSpot systems, automate sales operations, and integrate tech stacks that don't talk to each other. Then we stick around to run them. Here's what that looks like.
             </p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function CaseStudiesPage() {
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12">
-            {caseStudies.map((study, index) => (
+            {caseStudies.map((study) => (
               <div 
                 key={study.slug}
                 className="group relative p-8 lg:p-12 bg-card border border-border hover:border-foreground/20 transition-all"
@@ -102,14 +102,14 @@ export default function CaseStudiesPage() {
                     
                     <div className="space-y-6">
                       <div>
-                        <div className="text-sm font-semibold text-foreground mb-2">Challenge</div>
+                        <div className="text-sm font-semibold text-foreground mb-2">The Problem</div>
                         <p className="text-muted-foreground leading-relaxed">
                           {study.challenge}
                         </p>
                       </div>
                       
                       <div>
-                        <div className="text-sm font-semibold text-foreground mb-2">Result</div>
+                        <div className="text-sm font-semibold text-foreground mb-2">What We Built</div>
                         <p className="text-muted-foreground leading-relaxed">
                           {study.result}
                         </p>
@@ -132,7 +132,7 @@ export default function CaseStudiesPage() {
                       href={`/case-studies/${study.slug}`}
                       className="inline-flex items-center text-sm font-medium text-foreground hover:text-foreground/70 transition-colors group/link"
                     >
-                      Read full case study
+                      Read technical breakdown
                       <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -148,10 +148,10 @@ export default function CaseStudiesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Want results like these?
+              Need something like this built?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Tell us what's broken. We'll tell you how we'd fix it. No pitch. No pressure.
+              Tell us what's broken. We'll tell you how we'd fix it. No pitch deck. No pressure.
             </p>
             <Link href="/contact" className="btn-primary">
               Book a Call
