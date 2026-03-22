@@ -169,7 +169,7 @@ export default function HubSpotVsSalesforceSmallBusiness() {
             <h3 className="font-heading text-2xl font-bold text-foreground mb-4 mt-8">HubSpot Pricing (2026)</h3>
             <ul className="space-y-3 mb-6">
               <li className="text-muted-foreground"><strong>Free CRM:</strong> Genuinely useful with basic contact management, deal tracking, email templates</li>
-              <li className="text-muted-foreground"><strong>Sales Hub Starter:</strong> $20/user/month (billed annually) - Basic sequences, meeting scheduler, live chat</li>
+              <li className="text-muted-foreground"><strong>Sales Hub Starter:</strong> $20/user/month (billed annually) - Email tracking, meeting scheduler, live chat (no sequences)</li>
               <li className="text-muted-foreground"><strong>Sales Hub Professional:</strong> $100/user/month - Full automation, custom reporting, forecasting, playbooks</li>
               <li className="text-muted-foreground"><strong>Sales Hub Enterprise:</strong> $150/user/month - Custom objects, predictive lead scoring, conversation intelligence</li>
             </ul>

@@ -96,7 +96,7 @@ export default function HubSpotVsPipedriveSmallTeams() {
             <h3 className="font-heading text-2xl font-bold text-foreground mb-4 mt-8">HubSpot Pricing</h3>
             <ul className="space-y-3 mb-12">
               <li className="text-muted-foreground"><strong>Free CRM:</strong> $0 - Unlimited users, basic pipelines, email tracking, meeting scheduler</li>
-              <li className="text-muted-foreground"><strong>Starter:</strong> $20/user/month - Adds sequences, simple automation</li>
+              <li className="text-muted-foreground"><strong>Starter:</strong> $20/user/month - Email tracking, simple automation (no sequences)</li>
               <li className="text-muted-foreground"><strong>Professional:</strong> $100/user/month - Full automation, forecasting, custom reporting, playbooks</li>
               <li className="text-muted-foreground"><strong>Enterprise:</strong> $150/user/month - Custom objects, predictive lead scoring, advanced permissions</li>
             </ul>
@@ -162,7 +162,7 @@ export default function HubSpotVsPipedriveSmallTeams() {
               <strong>Pipedrive:</strong> 2-way email sync with Gmail/Outlook. Email sequences on Advanced tier ($34/user). No built-in VoIP calling.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              <strong>HubSpot:</strong> <a href="https://www.business.com/articles/pipedrive-vs-hubspot/" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">Built-in email and VoIP functionality</a>. Text messaging via platform. Email sequences on Starter+ tiers.
+              <strong>HubSpot:</strong> <a href="https://www.business.com/articles/pipedrive-vs-hubspot/" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">Built-in email and VoIP functionality</a>. Text messaging via platform. Email sequences on Professional+ tiers.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-12">
               <strong>Winner:</strong> HubSpot. <a href="https://www.business.com/articles/pipedrive-vs-hubspot/" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">HubSpot's expansive range of apps allows you to communicate with clients on more channels</a>.

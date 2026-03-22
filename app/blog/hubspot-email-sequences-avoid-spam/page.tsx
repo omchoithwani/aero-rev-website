@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, AlertTriangle, Mail } from "lucide
 
 export const metadata = {
   title: "How to Set Up HubSpot Email Sequences That Don't Land in Spam (2026 Guide)",
-  description: "Step-by-step instructions to improve HubSpot sequence deliverability. Turn off tracking pixels, authenticate your domain, and avoid spam filters. Works on Starter tier.",
+  description: "Step-by-step instructions to improve HubSpot sequence deliverability. Turn off tracking pixels, authenticate your domain, and avoid spam filters. Works on Professional tier.",
   keywords: "HubSpot sequences spam, email deliverability, HubSpot sender score, avoid spam folder",
 }
 
@@ -38,7 +38,7 @@ export default function HubSpotSequencesAvoidSpam() {
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-foreground" />
-              <span>Works on Starter tier</span>
+              <span>Professional tier required</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-foreground" />
@@ -81,7 +81,7 @@ export default function HubSpotSequencesAvoidSpam() {
               <strong>Time required:</strong> 20-30 minutes
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              <strong>HubSpot tier:</strong> Starter and above (requires IT/DNS access)
+              <strong>HubSpot tier:</strong> Sales Hub Professional or Enterprise (sequences not available on Free or Starter tiers)
             </p>
 
             <h3 className="font-heading text-xl font-semibold text-foreground mb-4">What You're Setting Up:</h3>

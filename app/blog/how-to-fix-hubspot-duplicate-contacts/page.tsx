@@ -63,7 +63,7 @@ export default function FixHubSpotDuplicateContacts() {
             <li className="text-muted-foreground"><strong>Workflows enroll contacts multiple times:</strong> Same person gets 2 emails for every campaign</li>
             <li className="text-muted-foreground"><strong>Reports are wrong:</strong> Your dashboard shows 5,000 contacts but you only have 3,200 real people</li>
             <li className="text-muted-foreground"><strong>Sales reps call the same person twice:</strong> Because they have 2 records in the pipeline</li>
-            <li className="text-muted-foreground"><strong>List costs balloon:</strong> HubSpot charges per contact. Duplicates = paying twice for the same person</li>
+            <li className="text-muted-foreground"><strong>List limits hit faster:</strong> Marketing contact limits are based on your tier. Duplicates inflate your contact count, pushing you toward tier upgrades</li>
           </ul>
           <p className="text-muted-foreground leading-relaxed">
             <a href="https://www.hublead.io/blog/hubspot-duplicate-contacts" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">Duplicates creep in from form submissions, CSV imports, integrations, manual entry, and they quietly wreck your reporting, your automations, and your team's trust in the CRM</a>.

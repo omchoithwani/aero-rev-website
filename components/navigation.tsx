@@ -14,7 +14,6 @@ const services = [
 
 const navLinks = [
   { name: "About", href: "/about" },
-  { name: "Solutions", href: "/solutions" },
   { name: "Services", href: "/services", hasDropdown: true },
   { name: "Case Studies", href: "/case-studies" },
   { name: "Resources", href: "/resources" },
