@@ -16,20 +16,27 @@ const guides = [
     icon: Code2,
     tags: ["HubSpot", "MyCase", "Zapier", "Legal"],
   },
+  {
+    slug: "sdr-automation-stack-hubspot-zapier",
+    title: "Building an SDR Automation Stack (HubSpot + Zapier + VoIP)",
+    description: "Complete technical guide to automating SDR workflows with HubSpot Sales Hub Pro. Intelligent lead routing, auto-enrollment workaround, and call disposition automation.",
+    category: "Technical Guide",
+    readTime: "18 min read",
+    icon: Code2,
+    tags: ["HubSpot", "SDR", "Zapier", "Sales Automation"],
+  },
+  {
+    slug: "membership-events-automation-hubspot",
+    title: "Membership + Events Automation in HubSpot",
+    description: "Step-by-step guide to running membership organizations and events through HubSpot. Tier-based pricing automation, custom API integrations, and dual-pipeline management.",
+    category: "Technical Guide",
+    readTime: "17 min read",
+    icon: Code2,
+    tags: ["HubSpot", "Membership", "Events", "API Integration"],
+  },
 ]
 
-const comingSoon = [
-  {
-    title: "Building an SDR Automation Stack (HubSpot + Zapier + VoIP)",
-    description: "How to build a four-tool sales engine that routes leads intelligently and auto-enrolls sequences without Sales Hub Enterprise.",
-    category: "Technical Guide",
-  },
-  {
-    title: "Membership + Events Automation in HubSpot",
-    description: "Complete guide to running membership organizations and events through HubSpot with tier-based pricing and custom API integrations.",
-    category: "Technical Guide",
-  },
-]
+const comingSoon = []
 
 export default function ResourcesPage() {
   return (
