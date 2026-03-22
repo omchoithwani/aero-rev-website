@@ -18,6 +18,7 @@ const navLinks = [
   { name: "Services", href: "/services", hasDropdown: true },
   { name: "Case Studies", href: "/case-studies" },
   { name: "Resources", href: "/resources" },
+  { name: "Blog", href: "/blog" },
   { name: "HubSpot", href: "/hubspot-partner-agency" },
 ]
 
