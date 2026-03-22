@@ -32,7 +32,7 @@ export default function FixHubSpotDuplicateContacts() {
           </h1>
           
           <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-            Step-by-step instructions for finding and merging duplicate contacts in HubSpot. Three methods: manual merge for <20 duplicates, native Manage Duplicates tool for 2,000-10,000 records, and automated solutions for ongoing cleanup.
+            Step-by-step instructions for finding and merging duplicate contacts in HubSpot. Three methods: manual merge for &lt;20 duplicates, native Manage Duplicates tool for 2,000-10,000 records, and automated solutions for ongoing cleanup.
           </p>
 
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
