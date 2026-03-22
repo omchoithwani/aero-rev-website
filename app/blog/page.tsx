@@ -34,6 +34,24 @@ const posts = [
     date: "March 2026",
     tags: ["MyCase", "Clio", "Legal", "Trust Accounting"],
   },
+  {
+    slug: "best-crm-b2b-under-20-employees",
+    title: "Best CRM for B2B Companies with Under 20 Employees",
+    description: "Detailed comparison of CRMs for small B2B teams. Real pricing, implementation timelines, and which platforms actually work for companies selling to other businesses.",
+    category: "CRM Guide",
+    readTime: "13 min read",
+    date: "March 2026",
+    tags: ["CRM", "B2B", "Small Teams", "Comparison"],
+  },
+  {
+    slug: "hubspot-vs-pipedrive-small-b2b-teams",
+    title: "HubSpot vs Pipedrive for Small B2B Teams",
+    description: "Honest comparison: $2,940 vs $6,000/year for 5 users. Real setup time, and which one actually helps reps close deals.",
+    category: "CRM Comparison",
+    readTime: "11 min read",
+    date: "March 2026",
+    tags: ["HubSpot", "Pipedrive", "Sales CRM"],
+  },
 ]
 
 export default function BlogPage() {
