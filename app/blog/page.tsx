@@ -6,12 +6,20 @@ export const metadata = {
   description: "Technical guides, CRM comparisons, and RevOps insights for B2B companies. Real-world advice on HubSpot, Salesforce, and sales automation.",
 }
 
+const categories = [
+  { name: "All Posts", slug: "all" },
+  { name: "CRM Comparisons", slug: "comparisons" },
+  { name: "How-To Guides", slug: "how-to" },
+  { name: "HubSpot", slug: "hubspot" },
+  { name: "Legal Tech", slug: "legal" },
+]
+
 const posts = [
   {
     slug: "hubspot-vs-salesforce-small-business",
     title: "HubSpot vs Salesforce for Small Businesses Under 50 Employees",
     description: "Real pricing, hidden costs, and which CRM actually saves you money over 3 years. Detailed comparison for B2B companies choosing their first serious CRM.",
-    category: "CRM Comparison",
+    category: "CRM Comparisons",
     readTime: "12 min read",
     date: "March 2026",
     tags: ["HubSpot", "Salesforce", "CRM", "Pricing"],
@@ -20,7 +28,7 @@ const posts = [
     slug: "sales-hub-pro-vs-enterprise",
     title: "Sales Hub Pro vs Enterprise: When to Upgrade (and When Not To)",
     description: "Sales Hub Enterprise costs $600/user/year more than Professional. Here's exactly when that upgrade is worth it—and when you're better off staying on Pro.",
-    category: "HubSpot Comparison",
+    category: "HubSpot",
     readTime: "10 min read",
     date: "March 2026",
     tags: ["HubSpot", "Sales Hub", "Pricing"],
@@ -29,7 +37,7 @@ const posts = [
     slug: "mycase-vs-clio-law-firms",
     title: "MyCase vs Clio for Solo and Small Law Firms",
     description: "Honest comparison from someone who works inside both platforms. Real pricing, trust accounting differences, and which platform saves you $1,500-$2,000/year.",
-    category: "Legal Software",
+    category: "Legal Tech",
     readTime: "11 min read",
     date: "March 2026",
     tags: ["MyCase", "Clio", "Legal", "Trust Accounting"],
@@ -38,7 +46,7 @@ const posts = [
     slug: "best-crm-b2b-under-20-employees",
     title: "Best CRM for B2B Companies with Under 20 Employees",
     description: "Detailed comparison of CRMs for small B2B teams. Real pricing, implementation timelines, and which platforms actually work for companies selling to other businesses.",
-    category: "CRM Guide",
+    category: "CRM Comparisons",
     readTime: "13 min read",
     date: "March 2026",
     tags: ["CRM", "B2B", "Small Teams", "Comparison"],
@@ -47,10 +55,37 @@ const posts = [
     slug: "hubspot-vs-pipedrive-small-b2b-teams",
     title: "HubSpot vs Pipedrive for Small B2B Teams",
     description: "Honest comparison: $2,940 vs $6,000/year for 5 users. Real setup time, and which one actually helps reps close deals.",
-    category: "CRM Comparison",
+    category: "CRM Comparisons",
     readTime: "11 min read",
     date: "March 2026",
     tags: ["HubSpot", "Pipedrive", "Sales CRM"],
+  },
+  {
+    slug: "how-to-fix-hubspot-duplicate-contacts",
+    title: "How to Fix HubSpot Duplicate Contacts (3 Methods)",
+    description: "Step-by-step instructions for finding and merging duplicate contacts in HubSpot. Three methods from manual merge to automated prevention.",
+    category: "How-To Guides",
+    readTime: "10 min read",
+    date: "March 2026",
+    tags: ["HubSpot", "Data Quality", "CRM Cleanup"],
+  },
+  {
+    slug: "hubspot-email-sequences-avoid-spam",
+    title: "How to Set Up HubSpot Email Sequences That Don't Land in Spam",
+    description: "Step-by-step deliverability guide. Turn off tracking pixels, authenticate your domain, suppress unengaged contacts, and avoid spam filters.",
+    category: "How-To Guides",
+    readTime: "9 min read",
+    date: "March 2026",
+    tags: ["HubSpot", "Email Deliverability", "Sequences"],
+  },
+  {
+    slug: "hubspot-lead-scoring-free-tier",
+    title: "How to Build Lead Scoring in HubSpot Free Tier (Manual Workaround)",
+    description: "Workaround to score leads on HubSpot Free tier using custom properties and lists. No Professional tier required. Saves $800/month.",
+    category: "How-To Guides",
+    readTime: "8 min read",
+    date: "March 2026",
+    tags: ["HubSpot", "Lead Scoring", "Free Tier"],
   },
 ]
 
@@ -67,6 +102,22 @@ export default function BlogPage() {
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
               Technical guides, CRM comparisons, and RevOps insights from building systems for B2B companies.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Category Filter */}
+      <section className="pb-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap gap-3">
+            {categories.map((category) => (
+              <button
+                key={category.slug}
+                className="px-4 py-2 text-sm font-medium border border-border hover:border-foreground/20 transition-colors"
+              >
+                {category.name}
+              </button>
+            ))}
           </div>
         </div>
       </section>
