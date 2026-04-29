@@ -49,7 +49,7 @@ export function Navigation() {
               alt="AeroRev"
               width={180}
               height={50}
-              className="w-auto h-auto max-h-24"
+              className="w-auto h-auto max-h-28"
               priority
             />
           </Link>
