@@ -260,8 +260,8 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="font-heading font-semibold text-foreground">Email us directly</h3>
-                <a href="mailto:hello@aerorev.com" className="mt-1 text-sm text-primary hover:text-primary/80 transition-colors">
-                  hello@aerorev.com
+                <a href="mailto:hello@aero-rev.com" className="mt-1 text-sm text-primary hover:text-primary/80 transition-colors">
+                  hello@aero-rev.com
                 </a>
               </div>
             </div>

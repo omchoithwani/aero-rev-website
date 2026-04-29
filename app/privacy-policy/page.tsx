@@ -127,7 +127,7 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <div className="mt-4 p-6 bg-secondary/50 rounded-lg border border-border">
                   <p className="text-foreground font-semibold">AeroRev</p>
-                  <p className="text-muted-foreground">Email: hello@aerorev.com</p>
+                  <p className="text-muted-foreground">Email: hello@aero-rev.com</p>
                 </div>
               </div>
 

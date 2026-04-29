@@ -130,10 +130,10 @@ export function Footer() {
             </ul>
             <div className="mt-6">
               <a
-                href="mailto:hello@aerorev.com"
+                href="mailto:hello@aero-rev.com"
                 className="text-sm text-primary hover:text-primary/80 transition-colors"
               >
-                hello@aerorev.com
+                hello@aero-rev.com
               </a>
             </div>
           </div>
