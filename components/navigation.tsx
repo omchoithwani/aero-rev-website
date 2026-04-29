@@ -47,9 +47,9 @@ export function Navigation() {
             <Image
               src="/logo-light.png"
               alt="AeroRev"
-              width={140}
-              height={40}
-              className="h-8 w-auto"
+              width={320}
+              height={90}
+              className="h-16 sm:h-20"
               priority
             />
           </Link>
