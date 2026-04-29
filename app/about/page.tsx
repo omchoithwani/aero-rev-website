@@ -1,49 +1,48 @@
 import Link from "next/link"
-import { ArrowRight, Target, Users, TrendingUp, Award } from "lucide-react"
+import { ArrowRight, Linkedin, Mail } from "lucide-react"
 
 export const metadata = {
-  title: "About AeroRev | HubSpot Partner Agency for B2B Revenue Operations",
-  description: "AeroRev is a HubSpot-partnered Revenue Operations agency serving B2B and ecommerce businesses in the USA and UK. We build, run, and stay accountable to revenue systems.",
+  title: "About AeroRev | HubSpot RevOps Agency",
+  description: "We build HubSpot systems, outbound engines, and email automation for B2B companies. 6+ years of hands-on implementation across Sales, Marketing, and Service Hubs.",
 }
 
-const values = [
+const team = [
   {
-    icon: Target,
-    title: "Problem first, tools second",
-    description: "We diagnose before implementing. No cookie-cutter solutions. No forcing HubSpot where it does not belong.",
+    name: "Om Choithwani",
+    role: "Founder",
+    email: "om.choithwani@aero-rev.com",
+    linkedin: "https://www.linkedin.com/in/omchoithwani/",
+    bio: "Om founded AeroRev after six years implementing HubSpot at partner agencies, working across Sales, Marketing, Ops, and Service Hubs for B2B and ecommerce clients in the USA and UK. He handles strategy and technical implementation. CRM architecture, outbound systems, email automation, RevOps planning. The focus is building infrastructure that supports how companies grow without constant manual intervention. He works directly with clients on HubSpot setup and system design, turning operational needs into working processes.",
   },
   {
-    icon: TrendingUp,
-    title: "Accountable to outcomes",
-    description: "We do not disappear after setup. We stay on retainer, run the systems, and own the results.",
+    name: "Adarsh Mishra",
+    role: "Co-Founder",
+    email: "adarsh.mishra@aero-rev.com",
+    linkedin: "https://www.linkedin.com/in/adarsh-m-87111423b/",
+    bio: "AeroRev's outbound is led by Adarsh Mishra, an email and LinkedIn specialist with 5+ years of experience working across ecommerce brands, marketing agencies, real estate firms, and fintech companies. Adarsh has run campaigns across 15+ client accounts, building everything from DTC lifecycle flows to high volume cold outreach stacks. He knows what gets replies, what kills deliverability, and what it actually takes to turn a broken sending setup into consistent pipeline. We bring outbound into engagements as a system, not a one-off campaign. Clients who work with us get someone who owns the whole stack and delivers without being managed.",
   },
   {
-    icon: Users,
-    title: "Work with founders and leaders",
-    description: "We work directly with decision-makers who want honest direction, not agencies selling the most expensive package.",
-  },
-  {
-    icon: Award,
-    title: "Partner, not vendor",
-    description: "HubSpot certified. Built systems for 60+ accounts. We know what works and what does not.",
+    name: "Michelle Antonio",
+    role: "Managing Partner",
+    email: "mantonio@teamoutsource.com",
+    linkedin: "https://www.linkedin.com/in/sbmichelle/",
+    bio: "Michelle leads client success at AeroRev, ensuring implementations deliver measurable outcomes and clients get full value from their systems. She brings over a decade of experience in sales, marketing, and operations. As Managing Partner of Team Outsource, she runs remote staffing and recruitment for real estate, construction, and service businesses. That work gives her a sharp eye for what actually moves the needle operationally versus what just looks good on paper. At AeroRev, she makes sure CRM setups align with how teams actually sell, that automation workflows solve real problems, and that onboarding doesn't end at handoff. Her role is making sure the work we do becomes part of how clients operate, not another tool they pay for and ignore.",
   },
 ]
 
 export default function AboutPage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
+            <div className="section-label">About AeroRev</div>
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              We build revenue systems that actually work
+              We Build HubSpot Systems That Drive Revenue
             </h1>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-              AeroRev is a HubSpot-partnered Revenue Operations agency serving B2B and ecommerce businesses in the USA and UK.
-            </p>
-            <p className="mt-4 text-xl text-muted-foreground leading-relaxed">
-              We build revenue systems, run them on retainer, and stay accountable to results. No disappearing after setup. No generic playbooks.
+              Six years of hands-on HubSpot implementation across B2B and ecommerce companies. We build CRM systems, outbound engines, and email automation that turn operational chaos into predictable pipeline.
             </p>
           </div>
         </div>
@@ -52,178 +51,193 @@ export default function AboutPage() {
       {/* What We Do */}
       <section className="py-16 lg:py-24 bg-secondary/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             <div>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground">
-                What we do
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
+                What We Actually Do
               </h2>
-              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                We work with B2B and ecommerce companies who are paying for HubSpot but not getting the value they expected. Revenue is stuck. Data is messy. Teams are not using the CRM.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                We implement HubSpot for B2B companies that need their CRM to drive revenue, not just track it.
               </p>
-              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                We fix it. Clean up the chaos. Build systems that fit how your team actually works. Then we stay on retainer to run it and keep it working.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Most companies buy HubSpot, go through a rushed onboarding, and end up with a system nobody uses. Deals sit in pipelines with no next steps. Automations break silently. Reports show activity but not outcomes.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                We fix that. CRM setup, outbound systems, email automation, RevOps planning. The work is technical implementation, not strategy decks.
               </p>
             </div>
-            <div className="space-y-8">
-              <div>
-                <h3 className="font-heading text-xl font-semibold text-foreground">HubSpot CRM Setup and Management</h3>
-                <p className="mt-2 text-muted-foreground">
-                  We set up HubSpot properly from the start or clean up the mess from a bad implementation. Custom objects, pipelines, workflows, reporting.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-heading text-xl font-semibold text-foreground">Revenue Operations</h3>
-                <p className="mt-2 text-muted-foreground">
-                  We connect sales, marketing, and customer success into one revenue engine. Forecasting, attribution, lifecycle stage tracking, deal scoring.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-heading text-xl font-semibold text-foreground">Outbound Systems</h3>
-                <p className="mt-2 text-muted-foreground">
-                  We build and manage signal-based cold email and LinkedIn outbound. No spray and pray. Hyper-personalised messaging your competitors are not doing.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-heading text-xl font-semibold text-foreground">Email Marketing</h3>
-                <p className="mt-2 text-muted-foreground">
-                  For ecommerce brands, we build and manage email marketing systems in Klaviyo, Mailchimp, or HubSpot. Flows, segmentation, campaigns.
-                </p>
-              </div>
+            <div>
+              <h3 className="font-heading text-xl font-bold text-foreground mb-4">Core Services</h3>
+              <ul className="space-y-3">
+                <li className="text-muted-foreground">
+                  <strong className="text-foreground">CRM Setup & Management:</strong> Build your HubSpot system right the first time. Pipelines, properties, automation, reporting.
+                </li>
+                <li className="text-muted-foreground">
+                  <strong className="text-foreground">HubSpot RevOps:</strong> Connect CRM, outbound, and marketing into one system that drives predictable revenue.
+                </li>
+                <li className="text-muted-foreground">
+                  <strong className="text-foreground">Outbound Systems:</strong> Signal-based cold email and LinkedIn outreach. Built for replies, not volume.
+                </li>
+                <li className="text-muted-foreground">
+                  <strong className="text-foreground">Email Marketing:</strong> Lifecycle flows, segmentation, deliverability. For ecommerce and B2B.
+                </li>
+              </ul>
+              <Link href="/services" className="inline-flex items-center mt-6 text-foreground font-medium hover:opacity-70 transition-opacity">
+                See Full Services
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              Who We Are
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              A small team focused on building HubSpot systems that work. No account managers, no project coordinators. You work directly with the people doing the implementation.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {team.map((member) => (
+              <div key={member.name} className="border-t border-border pt-8">
+                <div className="grid lg:grid-cols-3 gap-8">
+                  <div>
+                    <h3 className="font-heading text-2xl font-bold text-foreground mb-2">
+                      {member.name}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">{member.role}</p>
+                    <div className="flex gap-4">
+                      <a
+                        href={`mailto:${member.email}`}
+                        className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <Mail className="h-4 w-4 mr-2" />
+                        Email
+                      </a>
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <Linkedin className="h-4 w-4 mr-2" />
+                        LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                  <div className="lg:col-span-2">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {member.bio}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* How We Work */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground">
-            How we work
-          </h2>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <span className="font-heading text-2xl font-bold text-primary">1</span>
-              </div>
-              <h3 className="mt-4 font-heading text-lg font-semibold text-foreground">Audit</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                We dig into your current setup. What is broken? What is working? What are you actually trying to achieve?
-              </p>
-            </div>
-            <div>
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <span className="font-heading text-2xl font-bold text-primary">2</span>
-              </div>
-              <h3 className="mt-4 font-heading text-lg font-semibold text-foreground">Plan</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                We build a roadmap. No fluff. Clear priorities. What gets fixed first, what comes later, what gets left alone.
-              </p>
-            </div>
-            <div>
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <span className="font-heading text-2xl font-bold text-primary">3</span>
-              </div>
-              <h3 className="mt-4 font-heading text-lg font-semibold text-foreground">Build</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                We implement. Clean data, build workflows, set up pipelines, train your team. We do the work, you stay focused on revenue.
-              </p>
-            </div>
-            <div>
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <span className="font-heading text-2xl font-bold text-primary">4</span>
-              </div>
-              <h3 className="mt-4 font-heading text-lg font-semibold text-foreground">Run</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                We stay on retainer. Manage campaigns, optimise workflows, troubleshoot issues, keep everything running. You get results, not tickets.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
       <section className="py-16 lg:py-24 bg-secondary/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground">
-            What we believe
-          </h2>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value) => {
-              const Icon = value.icon
-              return (
-                <div key={value.title} className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-card border border-border flex items-center justify-center shrink-0">
-                    <Icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-xl font-semibold text-foreground">{value.title}</h3>
-                    <p className="mt-2 text-muted-foreground leading-relaxed">{value.description}</p>
-                  </div>
-                </div>
-              )
-            })}
+          <div className="max-w-3xl">
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              How We Work
+            </h2>
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                <strong className="text-foreground">We start with audit.</strong> Most HubSpot problems come from rushed setup, not missing features. We audit your current system, identify what's broken, and show you exactly what needs fixing before talking about projects.
+              </p>
+              <p>
+                <strong className="text-foreground">We build in phases.</strong> No six-month implementations. We break work into 2-4 week cycles. You see results fast, and we adjust as we learn how your team actually works.
+              </p>
+              <p>
+                <strong className="text-foreground">We train your team.</strong> Every implementation includes documentation and training. Your team needs to own the system after we're done, not depend on us to make basic changes.
+              </p>
+              <p>
+                <strong className="text-foreground">We stay technical.</strong> You won't get account managers who escalate questions. You work with the people building your systems. Faster decisions, fewer miscommunications, better outcomes.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Who We Are */}
+      {/* Who We Work With */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground">
-              Who we are
-            </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              AeroRev is led by Om Choithwani, a HubSpot specialist with 6+ years of experience across multiple HubSpot partner agencies including INSIDEA and webdew.
-            </p>
-            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              Om has worked hands-on with 60+ HubSpot accounts, scaling everything from startup CRM setups to enterprise RevOps transformations. He knows what breaks, what scales, and what actually drives revenue.
-            </p>
-            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              AeroRev operates as an independent consultancy, not an agency selling packages. We work on retainer with clients who want honest direction and accountability to results.
-            </p>
-            <div className="mt-8 flex items-center gap-4">
-              <a 
-                href="https://www.linkedin.com/in/omchoithwani/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-primary hover:text-primary/80 transition-colors"
-              >
-                Connect on LinkedIn →
-              </a>
-              <span className="text-muted-foreground">|</span>
-              <a 
-                href="https://ecosystem.hubspot.com/marketplace/solutions/aero-rev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-primary hover:text-primary/80 transition-colors"
-              >
-                View HubSpot Partner Profile →
-              </a>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+            <div>
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
+                Who We Work With
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                B2B companies with 10-200 employees. Usually growing fast enough that spreadsheets and disconnected tools create bottlenecks, but not big enough for enterprise systems or full-time RevOps headcount.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Common scenarios: Sales team hit their HubSpot limits. Marketing and sales data don't connect. Outbound campaigns get low replies or land in spam. Email flows exist but don't drive revenue.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                We've worked with law firms, staffing agencies, membership organizations, SaaS companies, ecommerce brands, and professional services firms across the USA and UK.
+              </p>
+            </div>
+            <div className="bg-card border border-border p-8 lg:p-12">
+              <h3 className="font-heading text-xl font-bold text-foreground mb-6">
+                You're a good fit if:
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div className="mt-1 h-5 w-5 border border-foreground flex items-center justify-center flex-shrink-0">
+                    <div className="h-2 w-2 bg-foreground"></div>
+                  </div>
+                  <span className="text-muted-foreground">You already use HubSpot but know it's not working as well as it should</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="mt-1 h-5 w-5 border border-foreground flex items-center justify-center flex-shrink-0">
+                    <div className="h-2 w-2 bg-foreground"></div>
+                  </div>
+                  <span className="text-muted-foreground">Your team needs systems that support how you actually sell, not generic best practices</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="mt-1 h-5 w-5 border border-foreground flex items-center justify-center flex-shrink-0">
+                    <div className="h-2 w-2 bg-foreground"></div>
+                  </div>
+                  <span className="text-muted-foreground">You want someone who builds and troubleshoots, not manages contractors</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="mt-1 h-5 w-5 border border-foreground flex items-center justify-center flex-shrink-0">
+                    <div className="h-2 w-2 bg-foreground"></div>
+                  </div>
+                  <span className="text-muted-foreground">You're ready to invest in infrastructure, not quick fixes</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-card border-y border-border">
+      {/* CTA */}
+      <section className="py-16 lg:py-24 bg-foreground text-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground">
-              Ready to fix what is broken?
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-6">
+              Let's Talk About Your HubSpot
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Book a call or send us a message. We will tell you exactly what is stuck and how we would fix it.
+            <p className="text-lg text-background/70 mb-8">
+              We start every engagement with an audit. No sales pitch, no commitment. Just an honest assessment of what's working, what's broken, and what it would take to fix it.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary">
-                Get in touch
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-              <Link href="/services" className="btn-secondary">
-                View services
-              </Link>
-            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center bg-background px-8 py-4 text-base font-medium text-foreground tracking-wide uppercase hover:bg-background/90 transition-all"
+            >
+              Get a Free HubSpot Audit
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
