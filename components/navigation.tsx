@@ -1,16 +1,9 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
-
-const services = [
-  { name: "CRM Setup & Management", href: "/services/crm-setup-management" },
-  { name: "HubSpot RevOps", href: "/services/hubspot-revops" },
-  { name: "Outbound Systems", href: "/services/outbound-lead-generation" },
-  { name: "Email Marketing", href: "/services/email-marketing" },
-]
+import Image from "next/image"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 const navLinks = [
   { name: "About", href: "/about" },
@@ -21,133 +14,150 @@ const navLinks = [
   { name: "HubSpot", href: "/hubspot-partner-agency" },
 ]
 
+const serviceLinks = [
+  { name: "CRM Setup & Management", href: "/services/crm-setup-management" },
+  { name: "HubSpot RevOps", href: "/services/hubspot-revops" },
+  { name: "Outbound Lead Generation", href: "/services/outbound-lead-generation" },
+  { name: "Email Marketing", href: "/services/email-marketing" },
+]
+
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
-      <nav className="mx-auto max-w-7xl px-6 lg:px-8">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-background/95 backdrop-blur-sm border-b border-border" : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="font-heading text-xl font-semibold text-foreground tracking-tight">
-              AeroRev
-            </span>
+            <Image
+              src="/logo-light.png"
+              alt="AeroRev"
+              width={140}
+              height={40}
+              className="h-8 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:gap-12">
+          <div className="hidden lg:flex lg:items-center lg:gap-8">
             {navLinks.map((link) => (
-              link.hasDropdown ? (
-                <div 
-                  key={link.name}
-                  className="relative"
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
-                >
-                  <Link 
+              <div key={link.name} className="relative">
+                {link.hasDropdown ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
+                  >
+                    <button className="flex items-center gap-1 text-sm font-medium text-foreground hover:opacity-70 transition-opacity uppercase tracking-wide">
+                      {link.name}
+                      <ChevronDown className="h-3 w-3" />
+                    </button>
+                    {servicesOpen && (
+                      <div className="absolute left-0 top-full mt-2 w-64 bg-card border border-border shadow-lg">
+                        {serviceLinks.map((service) => (
+                          <Link
+                            key={service.href}
+                            href={service.href}
+                            className="block px-6 py-3 text-sm text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
                     href={link.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide"
+                    className="text-sm font-medium text-foreground hover:opacity-70 transition-opacity uppercase tracking-wide"
                   >
                     {link.name}
                   </Link>
-                  
-                  <div className={cn(
-                    "absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-card border border-border shadow-xl p-3 transition-all duration-200",
-                    servicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
-                  )}>
-                    {services.map((service) => (
-                      <Link
-                        key={service.name}
-                        href={service.href}
-                        className="block px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide"
-                >
-                  {link.name}
-                </Link>
-              )
+                )}
+              </div>
             ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Link
-              href="/contact"
-              className="btn-secondary text-xs px-6 py-3"
-            >
-              Book a Call
+            <Link href="/contact" className="btn-primary">
+              Get Started
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile menu button */}
           <button
-            type="button"
-            className="lg:hidden p-2 text-muted-foreground hover:text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            className="lg:hidden p-2 text-foreground"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        <div className={cn(
-          "lg:hidden fixed inset-0 top-20 bg-background z-40 transition-all duration-300",
-          mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-        )}>
-          <div className="flex flex-col px-6 py-8">
+      {/* Mobile Navigation */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden border-t border-border bg-background">
+          <div className="space-y-1 px-4 py-6">
             {navLinks.map((link) => (
               <div key={link.name}>
-                <Link
-                  href={link.href}
-                  className="block py-4 text-2xl font-heading font-medium text-foreground border-b border-border"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-                {link.hasDropdown && (
-                  <div className="py-4 pl-4 flex flex-col gap-3 border-b border-border">
-                    {services.map((service) => (
-                      <Link
-                        key={service.name}
-                        href={service.href}
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
+                {link.hasDropdown ? (
+                  <div>
+                    <button
+                      onClick={() => setServicesOpen(!servicesOpen)}
+                      className="flex w-full items-center justify-between px-4 py-3 text-sm font-medium text-foreground uppercase tracking-wide"
+                    >
+                      {link.name}
+                      <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    {servicesOpen && (
+                      <div className="ml-4 space-y-1">
+                        {serviceLinks.map((service) => (
+                          <Link
+                            key={service.href}
+                            href={service.href}
+                            className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="block px-4 py-3 text-sm font-medium text-foreground uppercase tracking-wide"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
                 )}
               </div>
             ))}
-
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="btn-primary w-full justify-center"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Book a Call
-              </Link>
-            </div>
+            <Link
+              href="/contact"
+              className="btn-primary mt-4 w-full"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Get Started
+            </Link>
           </div>
         </div>
-      </nav>
-      
-      {/* Bottom border */}
-      <div className="border-b border-border" />
-    </header>
+      )}
+    </nav>
   )
 }
